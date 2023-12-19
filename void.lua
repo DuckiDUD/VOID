@@ -34,7 +34,7 @@ local UICorner_4 = Instance.new("UICorner")
 --Properties:
 
 void.Name = "void"
-void.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+void.Parent = game.CoreGui
 void.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Group.Name = "Group"
