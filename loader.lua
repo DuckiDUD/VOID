@@ -1,4 +1,5 @@
 --hi i still havent obsfucated the code :skull:
+--commits don't seem to work for some ODD reason :/
 
 local void = Instance.new("ScreenGui")
 local Group = Instance.new("CanvasGroup")
