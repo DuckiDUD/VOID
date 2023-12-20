@@ -3,8 +3,8 @@
 
 -- Instances:
 
-local void = Instance.new("CanvasGroup")
-local Group = Instance.new("Frame")
+local void = Instance.new("ScreenGui")
+local Group = Instance.new("CanvasGroup")
 local UICorner = Instance.new("UICorner")
 local Frame = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
