@@ -289,7 +289,7 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 	local running = true
 	coroutine.wrap(function()
 		while running do
-			local val = gui.Frame.ImageLabel.Rotation+360+math.random(50,160)
+			local val = gui.Group.Frame.ImageLabel.Rotation+360+math.random(50,160)
 			ti:Create(gui.Group.Frame.ImageLabel,TweenInfo.new(3,Enum.EasingStyle.Quint,Enum.EasingDirection.Out,0,false),{Rotation = val}):Play()
 			wait(2.9)
 		end
