@@ -316,7 +316,6 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 	
 	wait(10)
 	running = false
-	gui.Frame.ImageLabel.Rotation = 0
 	gui.Group:TweenSize(UDim2.new(0,0,0,300),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,2,false)
 end
 coroutine.wrap(NEGIHEB_fake_script)()
