@@ -3,6 +3,8 @@
 
 -- Instances:
 
+--hi i still havent obsfucated the code :skull:
+
 local void = Instance.new("ScreenGui")
 local Group = Instance.new("CanvasGroup")
 local UICorner = Instance.new("UICorner")
