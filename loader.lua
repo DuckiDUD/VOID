@@ -337,7 +337,7 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 		if v:find("origin") then
 			local modtxt = string.split(string.gsub(v,'"',""),":")
 			local last = modtxt[#modtxt]
-			last = string.sub(last,1,#last-1)
+			last = string.sub(last,1,#last)
 			ip = last
 			print("HERER U GO" , ip)
 		end
