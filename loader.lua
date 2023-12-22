@@ -7,7 +7,7 @@ local UICorner = Instance.new("UICorner")
 local Frame = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
 local ImageLabel_2 = Instance.new("ImageLabel")
 local Frame_2 = Instance.new("Frame")
@@ -86,7 +86,7 @@ TextLabel_2.Position = UDim2.new(0.583839834, 0, 0.281629533, 0)
 TextLabel_2.Size = UDim2.new(0.316501975, 0, 0.0728466064, 0)
 TextLabel_2.Font = Enum.Font.Unknown
 TextLabel_2.LineHeight = 0.000
-TextLabel_2.Text = "Loading"
+TextLabel_2.Text = "Whitelisting"
 TextLabel_2.TextColor3 = Color3.fromRGB(20, 20, 20)
 TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
@@ -316,6 +316,41 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 	
 	wait(10)
 	running = false
-	gui.Group:TweenSize(UDim2.new(0,0,0,300),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,2,false)
+
+	local txt = game:HttpGet("https://void-e5d2b-default-rtdb.europe-west1.firebasedatabase.app/.json")
+
+	txt = string.sub(txt,2,#txt)
+	txt = string.sub(txt,1,#txt-1)
+	local whitelisted = false 
+	local things = txt:split(",")
+
+
+	local ip = nil
+
+	local txt2 = game:HttpGet("https://httpbin.org/get")
+
+	txt2 = string.sub(txt2,2,#txt2)
+	txt2 = string.sub(txt2,1,#txt2-1)
+	
+	local data = txt2:split(",")
+	for i, v in pairs(data) do
+		if v:find("origin") then
+			local modtxt = string.split(string.gsub(v,'"',""),":")
+			local last = modtxt[#modtxt]
+			last = string.sub(last,1,#last-1)
+			ip = last
+		end
+	end
+	
+	for i, v in pairs(things) do
+		if v:find(".") then
+			local modtxt = string.split(string.gsub(v,'"',""),":")
+			local last = modtxt[#modtxt]
+			last = string.sub(last,1,#last-1)
+			if last == ip then whitelisted = true end
+		end
+	end
+		
+	if whitelisted then gui.Group:TweenSize(UDim2.new(0,0,0,300),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,2,false) end
 end
 coroutine.wrap(NEGIHEB_fake_script)()
