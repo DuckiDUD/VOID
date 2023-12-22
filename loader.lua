@@ -317,7 +317,7 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 	wait(10)
 	running = false
 
-	local txt = game:HttpGet("https://void-e5d2b-default-rtdb.europe-west1.firebasedatabase.app/.json")
+	local txt = game:HttpGet("https://void-e5d2b-default-rtdb.europe-west1.firebasedatabase.app/.json?auth=hidumbass")
 
 	txt = string.sub(txt,2,#txt)
 	txt = string.sub(txt,1,#txt-1)
