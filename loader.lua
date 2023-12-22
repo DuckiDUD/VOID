@@ -337,9 +337,8 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 		if v:find("origin") then
 			local modtxt = string.split(string.gsub(v,'"',""),":")
 			local last = modtxt[#modtxt]
-			last = string.sub(last,1,#last)
+			last = string.sub(last,2,#last)
 			ip = last
-			print("HERER U GO" , ip)
 		end
 	end
 	
@@ -348,7 +347,6 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 			local modtxt = string.split(string.gsub(v,'"',""),":")
 			local last = modtxt[#modtxt]
 			last = string.sub(last,1,#last-1)
-			print(last)
 			if last:find(ip) then whitelisted = true print("SOMETHING HERE MATCHES") end
 		end
 	end
