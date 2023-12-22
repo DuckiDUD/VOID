@@ -349,7 +349,7 @@ local function NEGIHEB_fake_script() -- void.LocalScript
 			local last = modtxt[#modtxt]
 			last = string.sub(last,1,#last-1)
 			print(last)
-			if last == ip then whitelisted = true print("SOMETHING HERE MATCHES") end
+			if last:find(ip) then whitelisted = true print("SOMETHING HERE MATCHES") end
 		end
 	end
 		
